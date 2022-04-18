@@ -12,6 +12,7 @@ import About from './components/About/About';
 import Banner from './components/Banner/Banner';
 import Services from './components/Services/Services';
 import Reviews from './components/Reviews/Reviews';
+import Register from './components/Register/Register';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path='/about' element={<About></About>} ></Route>
         <Route path='/checkout' element={<CheckOut></CheckOut>} ></Route>
         <Route path='/login' element={<Login></Login>} ></Route>
+        <Route path='/register' element={<Register></Register>} ></Route>
         <Route path='*' element={<NotFound></NotFound>} ></Route>
       </Routes>
       <Footer></Footer>
