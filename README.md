@@ -1,6 +1,22 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Sabit Photography](https://github.com/facebook/create-react-app).
+
+# Description about Website
+* This a Personal Photography Blog.
+* There is  Carousel banner,Services,Client Reviews.
+* Here is Responsive Navbar,footer,setUp route
+* Using React Router for Private Route
+* For Login Authentication I have used Firebase and React firebase hooks
+
+## Using Technology
+* React
+* React Router
+* Firebase
+* React Bootstrap
+* Row CSS
+* React firebase hooks
+
 
 ## Available Scripts
 
