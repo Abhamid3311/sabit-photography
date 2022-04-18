@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Wedding Photography",
+        "description": "We provide best wedding Shoot in the town. if you need a exclusive wedding shoot than contact us soon.",
+        "img": "https://www.zowed.com/blog/wp-content/uploads/2020/05/vt2.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Personal Photoshoot",
+        "description": "We provide best Personal Photoshoot in the City. if you need a exclusive Personal Photoshoot than contact us soon.",
+        "img": "https://serenabolton.com/wp-content/uploads/2020/11/personal-brand-photography-singer-songwriter-west-london-40.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Commercial Photography",
+        "description": "We provide best Commercial Photography in the town. if you need a exclusive Commercial Photography than contact us soon",
+        "img": "https://images.squarespace-cdn.com/content/v1/5beb4d1d7c9327376a4d452a/1600466853341-6N7GCJGANR9ZLUTBKGB1/Paulina-branding-photography-personal-portraits-transformational-portraits-headshot-business-portrait-img-400.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Events Photography",
+        "description": "We provide best Events Photography in the town. if you need a exclusive Events Photography than contact us soon",
+        "img": "https://shotkit.com/wp-content/uploads/2020/09/event-photography-8.jpg"
+    }
+]

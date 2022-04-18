@@ -4,26 +4,26 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Container>
-                    <Navbar.Brand href="/home#banner">Sabit-Photography</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link as={Link} to='/'>Home</Nav.Link>
-                            <Nav.Link href="/home#service">Services</Nav.Link>
-                            <Nav.Link href="/home#review">Reviews</Nav.Link>
-                            <Nav.Link as={Link} to='/blog'>Blogs</Nav.Link>
-                        </Nav>
-                        <Nav>
-                            <Nav.Link as={Link} to='/checkout'>Checkout</Nav.Link>
-                            <Nav.Link as={Link} to='/login'>Login</Nav.Link>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
-        </div>
+
+        <Navbar sticky='top' collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Container>
+                <Navbar.Brand href="/home#banner">Sabit-Photography</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link as={Link} to='/'>Home</Nav.Link>
+                        <Nav.Link href="/home#service">Services</Nav.Link>
+                        <Nav.Link href="/home#review">Reviews</Nav.Link>
+                        <Nav.Link as={Link} to='/blog'>Blogs</Nav.Link>
+                    </Nav>
+                    <Nav>
+                        <Nav.Link as={Link} to='/checkout'>Checkout</Nav.Link>
+                        <Nav.Link as={Link} to='/login'>Login</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+
     );
 };
 
