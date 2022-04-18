@@ -1,0 +1,13 @@
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-info {
+    margin-left: 30px;
+}
+
+.about-container .col {
+    width: 50%;
+}
