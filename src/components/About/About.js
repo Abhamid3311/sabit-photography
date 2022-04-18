@@ -1,8 +1,5 @@
 import React from 'react';
 import './About.css';
-
-import sabit2 from '../../images/sabit vai.jpg'
-import sabit from '../../images/sabit.png'
 import sabit3 from '../../images/sabit1.png'
 
 const About = () => {

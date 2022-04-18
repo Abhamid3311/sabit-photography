@@ -9,6 +9,9 @@ import CheckOut from './components/CheckOut/CheckOut';
 import Login from './components/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import About from './components/About/About';
+import Banner from './components/Banner/Banner';
+import Services from './components/Services/Services';
+import Reviews from './components/Reviews/Reviews';
 
 
 function App() {

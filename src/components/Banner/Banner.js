@@ -22,8 +22,8 @@ const Banner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3>Squirrels </h3>
+                        <p className='text-primary'>He is finding his Companion. motion capture</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -34,8 +34,8 @@ const Banner = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Chilling Seal</h3>
+                        <p>Enjoying Summer by swimming</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -46,8 +46,8 @@ const Banner = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Enligted Grasshopper</h3>
+                        <p>Making world more colorful by his own color</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -58,9 +58,9 @@ const Banner = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
+                        <h3>Scared Rabbit</h3>
                         <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                            Time to go for own Life!
                         </p>
                     </Carousel.Caption>
                 </Carousel.Item>

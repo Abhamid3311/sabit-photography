@@ -7,13 +7,13 @@ const Header = () => {
 
         <Navbar sticky='top' collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="/home#banner">Sabit-Photography</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/home#banner">Sabit-Photography</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link as={Link} to='/'>Home</Nav.Link>
+                        <Nav.Link as={Link} to='/home'>Home</Nav.Link>
                         <Nav.Link href="/home#service">Services</Nav.Link>
-                        <Nav.Link href="/home#review">Reviews</Nav.Link>
+                        <Nav.Link href='/home#review'>Reviews</Nav.Link>
                         <Nav.Link as={Link} to='/about'>About</Nav.Link>
                         <Nav.Link as={Link} to='/blog'>Blogs</Nav.Link>
                     </Nav>
