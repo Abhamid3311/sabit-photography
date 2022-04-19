@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendEmailVerification } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 
@@ -12,11 +13,12 @@ const Register = () => {
     const navigate = useNavigate();
 
 
+
     const [
         createUserWithEmailAndPassword,
         user,
         loading
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const handleEmailBlur = (e) => {
         setEmail(e.target.value);
@@ -27,6 +29,10 @@ const Register = () => {
     const handleConfirmPasswordBlur = e => {
         setConfirmPassword(e.target.value);
     };
+
+
+    
+
 
     if (user) {
         navigate('/');
@@ -42,12 +48,13 @@ const Register = () => {
             return;
         }
         createUserWithEmailAndPassword(email, password);
+
     };
 
     return (
-        <div className='form-container'>
+        <div className='form-container mt-5'>
             <div>
-                <h2 className='form-titel'>Sign Up</h2>
+                <h2 className='form-titel my-3'>Sign Up</h2>
                 <form onSubmit={handleCreateUsers}>
                     <div className="input-group">
                         <label htmlFor="email">Email</label>
@@ -62,7 +69,9 @@ const Register = () => {
                         <input onBlur={handleConfirmPasswordBlur} type="password" name="confirm-password" id="" required />
                     </div>
                     <p style={{ color: "red" }}>{error}</p>
-                    <input className='form-submit' type="submit" value="Sign Up" />
+                    <input
+
+                        className='form-submit' type="submit" value="Sign Up" />
                 </form>
                 <p className='forget-pass-p'>
                     Already have an account? <Link className='form-link' to='/login'>Login</Link>

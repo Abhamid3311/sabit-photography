@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 
 
 const Login = () => {
@@ -13,6 +14,9 @@ const Login = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
     const [signInWithGoogle] = useSignInWithGoogle(auth);
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+
+
 
     const [
         signInWithEmailAndPassword,
@@ -65,8 +69,14 @@ const Login = () => {
                     }
                     <input className='form-submit' type="submit" value="Login" />
                 </form>
+                <p className='create-account-p'>
+                    New to Sabit-photography? <Link className='form-link' to='/register'>create an account</Link>
+                </p>
                 <p className='forget-pass-p'>
-                    New to Ema-John? <Link className='form-link' to='/register'>create an account</Link>
+                    Forget your password? <button onClick={async () => {
+                        await sendPasswordResetEmail(email);
+                        alert('Check email for reset');
+                    }} className='reset'>Reset password</button>
                 </p>
                 <button onClick={handleGoogleSignIn} className='google-signIn-btn'>Continue with Google</button>
             </div>
