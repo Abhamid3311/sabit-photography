@@ -1,72 +1,78 @@
-import React, { useRef } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 
 const Register = () => {
-    const emailRef = useRef('');
-    const passwordRef = useRef('');
-    const nameRef = useRef('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [error, setError] = useState('');
     const navigate = useNavigate();
+
+
     const [
         createUserWithEmailAndPassword,
         user,
-        loading,
-        error,
+        loading
     ] = useCreateUserWithEmailAndPassword(auth);
 
-
-    const handleRegister = e => {
-        e.preventDefault();
-        const email = emailRef.current.value;
-        const name = nameRef.current.value;
-        const password = passwordRef.current.value;
-
-        createUserWithEmailAndPassword(name, email, password);
-    }
+    const handleEmailBlur = (e) => {
+        setEmail(e.target.value);
+    };
+    const handlePasswordBlur = e => {
+        setPassword(e.target.value);
+    };
+    const handleConfirmPasswordBlur = e => {
+        setConfirmPassword(e.target.value);
+    };
 
     if (user) {
         navigate('/');
     }
+    const handleCreateUsers = e => {
+        e.preventDefault();
+        if (password !== confirmPassword) {
+            setError('your two password did not match!');
+            return;
+        }
+        if (password.length < 6) {
+            setError('Password must be 6 charecters or longer');
+            return;
+        }
+        createUserWithEmailAndPassword(email, password);
+    };
 
-    const navigateLogin = () => {
-        navigate('/login');
-    }
     return (
-        <div className='container w-50 mx-auto '>
-            <h2 className='text-primary text-center'> Please Register</h2>
-            <Form onSubmit={handleRegister}>
-                <Form.Group className="mb-3" controlId="formBasicName">
-                    <Form.Label>Your Name</Form.Label>
-                    <Form.Control ref={nameRef} type="text" placeholder="Enter name" required />
-                    <Form.Text className="text-muted">
-                        We'll never share your name with anyone else.
-                    </Form.Text>
-                </Form.Group>
+        <div className='form-container'>
+            <div>
+                <h2 className='form-titel'>Sign Up</h2>
+                <form onSubmit={handleCreateUsers}>
+                    <div className="input-group">
+                        <label htmlFor="email">Email</label>
+                        <input onBlur={handleEmailBlur} type="email" name="email" id="" required />
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="password">Password</label>
+                        <input onBlur={handlePasswordBlur} type="password" name="password" id="" required />
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="confirm-password">Confirm Password</label>
+                        <input onBlur={handleConfirmPasswordBlur} type="password" name="confirm-password" id="" required />
+                    </div>
+                    <p style={{ color: "red" }}>{error}</p>
+                    <input className='form-submit' type="submit" value="Sign Up" />
+                </form>
+                <p className='forget-pass-p'>
+                    Already have an account? <Link className='form-link' to='/login'>Login</Link>
+                </p>
+                <button className='google-signIn-btn'>Continue with Google</button>
+            </div>
 
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
-                    <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
-                    </Form.Text>
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
-                </Form.Group>
-
-
-
-                <Button variant="primary" type="submit">
-                    Register
-                </Button>
-            </Form>
-            <p>Already have an account? <span className='text-danger' onClick={navigateLogin}>Please login</span></p>
         </div>
+
+
     );
 };
 
