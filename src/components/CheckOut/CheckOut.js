@@ -5,35 +5,48 @@ import auth from '../../firebase.init';
 
 const CheckOut = () => {
     const [user] = useAuthState(auth);
-    const [name, setname] = useState('');
     const [address, setAddress] = useState('');
+    const [subject, setSubject] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [error, setError] = useState('');
 
 
-    const handlenameBlur = (e) => {
-        setname(e.target.value);
-    };
     const handleAddressBlur = e => {
         setAddress(e.target.value);
+    };
+    const handleSubjectBlur = e => {
+        setSubject(e.target.value);
     };
     const handlePhoneNumberBlur = e => {
         setPhoneNumber(e.target.value);
     };
 
-    const handleCreateUsers = e => {
+    const handleCheckout = e => {
         e.preventDefault();
-        const shipping = { name, address, phoneNumber }
-
+        const shipping = {
+            name: user?.displayName,
+            email: user?.email,
+            address,
+            phoneNumber,
+            subject
+        };
+        console.log(shipping);
+        
     };
+
     return (
-        <div className='form-container'>
+        <div className='form-container mt-3'>
             <div>
-                <h2 className='form-titel'>Client Information</h2>
-                <form onSubmit={handleCreateUsers}>
+                <h2 className='form-titel  text-center my-5 text-primary fw-bold'>Client Information</h2>
+
+                <form onSubmit={handleCheckout}>
                     <div className="input-group">
                         <label htmlFor="name">Your Name</label>
-                        <input onBlur={handlenameBlur} type="text" name="name" id="" required />
+                        <input value={user?.displayName} type="text" disabled />
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="email">Your Email</label>
+                        <input value={user?.email} type="text" disabled />
                     </div>
                     <div className="input-group">
                         <label htmlFor="address">Address</label>
@@ -42,6 +55,10 @@ const CheckOut = () => {
                     <div className="input-group">
                         <label htmlFor="phone-number">Phone Number</label>
                         <input onBlur={handlePhoneNumberBlur} type="number" name="phone-number" id="" required />
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="subject">Subject</label>
+                        <input onBlur={handleSubjectBlur} type="text" name="subject" id="" required />
                     </div>
                     <p style={{ color: "red" }}>{error}</p>
                     <input className='form-submit' type="submit" value="Add Information" />

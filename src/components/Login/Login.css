@@ -1,5 +1,5 @@
 .form-container {
-    width: 600px;
+    max-width: 500px;
     margin: 0 auto;
     border: 1px solid #95A0A7;
     box-sizing: border-box;

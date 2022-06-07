@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useSendEmailVerification } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
@@ -11,15 +11,16 @@ const Register = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
-
-
-
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    const [signInWithGoogle, gUser] = useSignInWithGoogle(auth);
     const [
         createUserWithEmailAndPassword,
         user,
         loading
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
+    //Handle Input
     const handleEmailBlur = (e) => {
         setEmail(e.target.value);
     };
@@ -30,13 +31,17 @@ const Register = () => {
         setConfirmPassword(e.target.value);
     };
 
+    if (user || gUser) {
+        navigate(from, { replace: true });
+    };
 
-    
+    //Handle Google signIn
+    const handleGoogleSignIn = e => {
+        e.preventDefault();
+        signInWithGoogle(email, password)
+    };
 
-
-    if (user) {
-        navigate('/');
-    }
+    //Handle Create User
     const handleCreateUsers = e => {
         e.preventDefault();
         if (password !== confirmPassword) {
@@ -48,13 +53,13 @@ const Register = () => {
             return;
         }
         createUserWithEmailAndPassword(email, password);
-
     };
+
 
     return (
         <div className='form-container mt-5'>
             <div>
-                <h2 className='form-titel my-3'>Sign Up</h2>
+                <h2 className='form-titel text-center my-5 text-primary fw-bold'>Sign Up</h2>
                 <form onSubmit={handleCreateUsers}>
                     <div className="input-group">
                         <label htmlFor="email">Email</label>
@@ -76,7 +81,7 @@ const Register = () => {
                 <p className='forget-pass-p'>
                     Already have an account? <Link className='form-link' to='/login'>Login</Link>
                 </p>
-                <button className='google-signIn-btn'>Continue with Google</button>
+                <button onClick={handleGoogleSignIn} className='google-signIn-btn'>Continue with Google</button>
             </div>
 
         </div>

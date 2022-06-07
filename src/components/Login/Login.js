@@ -5,6 +5,8 @@ import auth from '../../firebase.init';
 import './Login.css';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
@@ -13,10 +15,8 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
-    const [signInWithGoogle] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, gUser] = useSignInWithGoogle(auth);
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
-
-
 
     const [
         signInWithEmailAndPassword,
@@ -25,9 +25,7 @@ const Login = () => {
         error
     ] = useSignInWithEmailAndPassword(auth);
 
-
-
-
+    // get value from inputField
     const handleEmailBlur = (e) => {
         setEmail(e.target.value);
     };
@@ -35,14 +33,16 @@ const Login = () => {
         setPassword(e.target.value);
     };
 
-    if (user) {
+
+    if (user || gUser) {
         navigate(from, { replace: true });
     }
+
+    // Handle SignIn 
 
     const handleUserSignIn = e => {
         e.preventDefault();
         signInWithEmailAndPassword(email, password);
-        console.log(email, password);
     }
 
     const handleGoogleSignIn = e => {
@@ -51,9 +51,10 @@ const Login = () => {
     }
 
     return (
-        <div className='form-container'>
+        <div className='form-container form-container mt-3'>
             <div>
-                <h2 className='form-titel'>Login</h2>
+                <h2 className='form-titel text-center my-5 text-primary fw-bold'>Login</h2>
+
                 <form onSubmit={handleUserSignIn}>
                     <div className="input-group">
                         <label htmlFor="email">Email</label>
@@ -63,21 +64,28 @@ const Login = () => {
                         <label htmlFor="password">Password</label>
                         <input onBlur={handlePasswordBlur} type="password" name="password" required />
                     </div>
+
                     <p style={{ color: "red" }}>{error?.message}</p>
                     {
                         loading && <p>Loading...</p>
                     }
+
                     <input className='form-submit' type="submit" value="Login" />
                 </form>
+
+
                 <p className='create-account-p'>
-                    New to Sabit-photography? <Link className='form-link' to='/register'>create an account</Link>
+                    New to Dream Photography? <Link className='form-link' to='/register'>create an account</Link>
                 </p>
+
                 <p className='forget-pass-p'>
                     Forget your password? <button onClick={async () => {
                         await sendPasswordResetEmail(email);
-                        alert('Check email for reset');
+                        toast('Check email for reset password');
                     }} className='reset'>Reset password</button>
                 </p>
+
+                <ToastContainer />
                 <button onClick={handleGoogleSignIn} className='google-signIn-btn'>Continue with Google</button>
             </div>
 
