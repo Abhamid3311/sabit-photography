@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { AiOutlineArrowRight } from 'react-icons/ai';
 
 const Service = ({ service }) => {
     const { name, description, img } = service;
@@ -16,7 +17,9 @@ const Service = ({ service }) => {
                 <Card.Text>
                     {description}
                 </Card.Text>
-                <Button onClick={handleBookNow} variant="primary">Book Now</Button>
+                <Button onClick={handleBookNow} variant="primary">
+                    Book Now <AiOutlineArrowRight></AiOutlineArrowRight>
+                </Button>
             </Card.Body>
         </Card>
 

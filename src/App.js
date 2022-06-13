@@ -16,6 +16,7 @@ import Register from './components/Register/Register';
 import RequireAuth from './components/RequireAuth/RequireAuth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './firebase.init';
+import Gallery from './components/Gallery/Gallery';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path='/home' element={<Home></Home>} ></Route>
         <Route path='/blog' element={<Blog></Blog>} ></Route>
         <Route path='/about' element={<About></About>} ></Route>
+        <Route path='/gallery' element={<Gallery></Gallery>} ></Route>
         <Route path='/checkout' element={
           <RequireAuth>
             <CheckOut></CheckOut>
