@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@300;500&display=swap');
+
+#banner {
+    background-image: url(../../images/bg3.jpg);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    padding-top: 200px;
+    background-attachment: fixed;
+}
+
+.banner-head {
+    max-width: 700px;
+}
+.banner-head h1{
+    font-family: 'Arima';
+    font-weight: 800;
+}
