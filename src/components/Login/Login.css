@@ -6,6 +6,8 @@
     border-radius: 8px;
     display: flex;
     justify-content: center;
+    
+
 }
 
 .form-titel {
@@ -27,7 +29,8 @@
 
 }
 
-.input-group input {
+.input-group input,
+select {
     width: 415px;
     height: 45px;
     border: 1px solid #95A0A7;

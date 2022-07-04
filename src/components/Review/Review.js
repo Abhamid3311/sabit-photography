@@ -7,7 +7,7 @@ const Review = ({ review }) => {
         <div>
             <Card className='shadow' >
                 <Card.Body>
-                    <Card.Text className='fs-4 '>
+                    <Card.Text className='fs-5 '>
                         {comment}
                     </Card.Text>
                     <Card.Title className='text-danger '>Ratings: {ratings} Starts</Card.Title>

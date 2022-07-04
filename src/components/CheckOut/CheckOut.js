@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -31,7 +32,8 @@ const CheckOut = () => {
             subject
         };
         console.log(shipping);
-        
+        e.target.reset();
+
     };
 
     return (
@@ -56,10 +58,18 @@ const CheckOut = () => {
                         <label htmlFor="phone-number">Phone Number</label>
                         <input onBlur={handlePhoneNumberBlur} type="number" name="phone-number" id="" required />
                     </div>
-                    <div className="input-group">
-                        <label htmlFor="subject">Subject</label>
-                        <input onBlur={handleSubjectBlur} type="text" name="subject" id="" required />
+
+                    <div className='input-group'>
+                        <label htmlFor="subject">Choose Service</label>
+                        <select name='subject' onBlur={handleSubjectBlur}>
+                            <option defaultValue="wedding">Wedding Photography</option>
+                            <option value="Personal">Personal Photoshoot</option>
+                            <option value="Commercial">Commercial Photography</option>
+                            <option value="Events">Events Photography</option>
+                        </select>
                     </div>
+
+
                     <p style={{ color: "red" }}>{error}</p>
                     <input className='form-submit' type="submit" value="Add Information" />
                 </form>
