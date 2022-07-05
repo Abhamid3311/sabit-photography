@@ -1,17 +1,17 @@
 [
     {
         "id": 101,
-        "name": "Michel Smith",
+        "name": "Kim Wiseley",
         "ratings": 5,
-        "comment": "He is doing a awesome work. I am connected with him many years. I love his shoot.Keep it up man",
+        "comment": "We day dream in Jen's photography. Her imagery elicits an innate femininity and ethereal quality that makes our hearts flutter. She has a vision unlike any other, mesmerizing us with the most beautiful moments.",
         "img": "https://i.pinimg.com/originals/a1/2f/fd/a12ffdab3b3318bee3e7caa0dc95341f.jpg",
-        "occupation": "Artist"
+        "occupation": "Editor-in-Chief"
     },
     {
         "id": 102,
-        "name": "Taylor Swift",
+        "name": "Summer Watkins",
         "ratings": 5,
-        "comment": "He is doing a awesome shoot. i love his dedication.I am connected with him many years.love it",
+        "comment": "Jen's images are a breath of fresh air. Each image feels carefully crafted, as if painted by hand. She is a true artist and I adore her timeless aesthetic.",
         "img": "https://121clicks.com/wp-content/uploads/2020/04/liliia_beda_fine_art_photography_10.jpg",
         "occupation": "Model"
     },
@@ -19,31 +19,31 @@
         "id": 103,
         "name": "Taylor Swift",
         "ratings": 5,
-        "comment": "He is doing a awesome shoot. i love his dedication.I am connected with him many years.",
+        "comment": "The way Jen's photographs capture an essence and have an airiness to them, it makes for a beautiful memory. Her approach is an artful one that you'd be lucky to have at your own wedding or event.",
         "img": "https://121clicks.com/wp-content/uploads/2020/04/liliia_beda_fine_art_photography_10.jpg",
         "occupation": "Model"
     },
     {
         "id": 104,
-        "name": "Taylor Swift",
+        "name": "Jacqueline Tobin",
         "ratings": 5,
-        "comment": "He is doing a awesome shoot. i love his dedication.I am connected with him many years.",
+        "comment": "Every romantic notion I've ever conjured up for a modern yet timeless sun-drenched wedding album is perfectly encapsulated in every image Jen Huang creates — from delicate details and décor to tantalizing food shots and couture-clad, gorgeous brides, Jen's images have it all, and then some.",
         "img": "https://121clicks.com/wp-content/uploads/2020/04/liliia_beda_fine_art_photography_10.jpg",
         "occupation": "Model"
     },
     {
         "id": 105,
-        "name": "Taylor Swift",
+        "name": "Amanda Nistor",
         "ratings": 5,
-        "comment": "He is doing a awesome shoot. i love his dedication.I am connected with him many years.",
+        "comment": "Jen is renowned for her natural, delicate portraiture in this industry, but she also captures the strength, character and beauty of every subject she photographs. She is driven to create the best, most timeless works and her craftsmanship and attention to detail is like no other. The painterly quality of her photographs speaks to the light seeker in me and her imagery is so strong that I can recognize her photographs from afar.",
         "img": "https://121clicks.com/wp-content/uploads/2020/04/liliia_beda_fine_art_photography_10.jpg",
-        "occupation": "Model"
+        "occupation": "Founder, "
     },
     {
         "id": 106,
-        "name": "Bob Rock",
+        "name": "Patricia Rock",
         "ratings": 4.9,
-        "comment": "He is doing a awesome wedding shoot. i love his shoot.I am connected with him many years.",
+        "comment": "The beauty of Jen's talent lies in the nuances and fleeting moments she captures in a harmony of light, movement, and emotion. Having the opportunity to be both editor and client on different occasions has made me even more appreciative of the passion that she exudes through her work",
         "img": "https://thumbs.dreamstime.com/b/smiling-male-worker-headset-posing-picture-call-center-agent-wearing-looking-camera-near-laptop-workplace-happy-personal-120429091.jpg",
         "occupation": "Business Man"
     }

@@ -1,18 +1,19 @@
 import React from 'react';
-import { Card, CardGroup } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { AiFillStar } from 'react-icons/ai';
-import { BsStarHalf } from 'react-icons/bs';
+import '../Reviews/Reviews.css'
+
 
 const Review = ({ review }) => {
     const { name, comment, img, occupation, ratings } = review;
     return (
         <div>
-            <Card className='shadow ' style={{ width: '20rem', height: '18rem', position: 'relative' }}>
+            <Card className='review-card ' style={{ width: '20rem', height: '15rem', position: 'relative' }}>
                 <Card.Body>
-                    <Card.Text className='fs-5 mb-0'>
+                    <Card.Text className='review-text mb-3'>
                         {comment}
                     </Card.Text>
-                    <Card.Title className='d-flex  align-items-center fs-3 text-danger mb-4 '>
+                    {/*  <Card.Title className='d-flex  align-items-center fs-4 text-danger mb-3 '>
                         <p className='mb-0'>{ratings}</p>
                         <div>
                             <AiFillStar className='ms-2'></AiFillStar>
@@ -21,7 +22,7 @@ const Review = ({ review }) => {
                             <AiFillStar></AiFillStar>
                             <AiFillStar></AiFillStar>
                         </div>
-                    </Card.Title>
+                    </Card.Title> */}
                     <div className='d-flex align-items-center text-start mb-2' style={{ position: 'absolute', bottom: 1 }}>
                         <Card.Img src={img} className='rounded-circle w-25 me-2' alt='person' />
                         <div className='text-secondary'>
