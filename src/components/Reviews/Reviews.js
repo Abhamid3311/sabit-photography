@@ -32,8 +32,8 @@ const Reviews = () => {
             </div>
 
             <Swiper
-                slidesPerView={3}
-                spaceBetween={30}
+                slidesPerView={1}
+                spaceBetween={10}
                 slidesPerGroup={3}
                 loop={true}
                 loopFillGroupWithBlank={true}
@@ -43,6 +43,17 @@ const Reviews = () => {
                 }}
                 pagination={{
                     clickable: true,
+                }}
+                breakpoints={{
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                   
                 }}
 
                 modules={[Autoplay, Pagination, Navigation]}

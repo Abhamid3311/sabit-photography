@@ -3,16 +3,16 @@
 This website Developed by React [Sabit Photography](https://github.com/facebook/create-react-app).
 
 # Description about Website
-* Sabit Photography is  a Personal Photography Blog.
-* There is a section of Services where we describe whom services we provide.
-* There also has a  Carousel banner, and a Client Reviews section.
-* at Contact form you can send us your feedback.
+* Sabit Photography is  a Personal Photography Website.
 * It is a Full Responsive Site.
-* There are a Register and Login form. You need to get access for booking Shoot appointment. 
-* For that section I have used React router for make it private route.
+* There is a section of Services where we describe whom services we provide.
+* There also has a sliding Client Reviews section.
+* At Contact form you can send me your feedback.
+* Implement Email and Google authentication for register & login.
+* Implement React Router for privete Routes.
 * There are a Gallery page. where you can see our Pictures.
 * Checkout page for book a Photo Shoot.
-* About page for Introduction of Photographar and his Contacts
+* About page for Introduction of Photographar and my Contacts.
 
 ## Used Technology on this site
 * HTML5
@@ -26,5 +26,6 @@ This website Developed by React [Sabit Photography](https://github.com/facebook/
 * React Gallery
 * React firebase hooks
 * React email js
+* Swiper js
 
 
