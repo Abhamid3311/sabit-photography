@@ -1,6 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Review from '../Review/Review';
 import './Reviews.css';
+
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+
+import { Pagination, Navigation } from "swiper";
+
+
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
@@ -8,7 +21,9 @@ const Reviews = () => {
         fetch('reviews.json')
             .then(res => res.json())
             .then(data => setReviews(data))
-    }, [])
+    }, []);
+
+
     return (
         <div id='review' className='my-5 px-5 pb-5' >
             <div className='my-5'>
@@ -16,14 +31,38 @@ const Reviews = () => {
                 <h2 className='text-primary fw-bold'>What my clients says</h2>
             </div>
 
-            <div className="review-container">
+            <Swiper
+                slidesPerView={3}
+                spaceBetween={30}
+                slidesPerGroup={3}
+                loop={true}
+                loopFillGroupWithBlank={true}
+                pagination={{
+                    clickable: true,
+                }}
+              
+                modules={[Pagination, Navigation]}
+                className="mySwiper"
+            >
+
                 {
-                    reviews.map(review => <Review
-                        key={review.id}
-                        review={review}
-                    ></Review>).slice(0, 3)
+                    reviews.map(review => <SwiperSlide>
+                        <Review
+                            key={review.id}
+                            review={review}
+                        ></Review>
+                    </SwiperSlide>
+                    )
                 }
-            </div>
+
+
+
+
+            </Swiper>
+
+
+
+
         </div>
     );
 };

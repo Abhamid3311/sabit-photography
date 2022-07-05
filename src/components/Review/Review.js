@@ -8,7 +8,7 @@ const Review = ({ review }) => {
     const { name, comment, img, occupation, ratings } = review;
     return (
         <div>
-            <Card className='review-card ' style={{ width: '20rem', height: '15rem', position: 'relative' }}>
+            <Card className='review-card ' style={{ width: '20rem', height: '18rem', position: 'relative' }}>
                 <Card.Body>
                     <Card.Text className='review-text mb-3'>
                         {comment}

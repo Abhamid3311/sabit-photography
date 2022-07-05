@@ -6,6 +6,7 @@ import Services from '../Services/Services';
 import Contact from './Contact';
 import Featured from './Featured/Featured';
 
+
 const Home = () => {
     return (
         <div>
@@ -14,6 +15,8 @@ const Home = () => {
             <Featured></Featured>
             <Reviews></Reviews>
             <Contact></Contact>
+
+
         </div>
     );
 };

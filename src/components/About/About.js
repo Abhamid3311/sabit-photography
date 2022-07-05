@@ -8,9 +8,6 @@ const About = () => {
     return (
         <div >
             <h1 className='text-primary text-center mt-3'>About Myself</h1>
-
-
-
             <div class=" container col-xxl-8 px-4 py-5">
                 <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
                     <div class="col-10 col-sm-8 col-lg-6">
@@ -20,7 +17,7 @@ const About = () => {
                         <div className='mb-5'>
                             <h1>
                                 Hi, I'm  <span className='text-primary'> Zaman Sabit </span></h1>
-                            <h3> I'm a <span className='text-primary'> Photographar </span>
+                            <h3> I'm a <span className='text-primary'> Professional Photographar </span>
                             </h3>
                         </div>
 
@@ -58,8 +55,8 @@ const About = () => {
 
 
 
-             <div className='ms-5'>
-                <h2 className='text-primary '>Contact Me</h2>
+            <div className='ms-5 container'>
+                <h3 className='text-primary'>Contact Me  </h3>
                 <p className='fs-4'><AiFillHome></AiFillHome> Sonadanga, Khulna, Bangladesh</p>
                 <p className='fs-4'><AiTwotoneMail></AiTwotoneMail> sabitXXX@gmail.com</p>
                 <p className='fs-4'><AiFillPhone></AiFillPhone> +880 018XXXXXXXXX</p>
