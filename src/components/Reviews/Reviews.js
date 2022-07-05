@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 
-import { Pagination, Navigation } from "swiper";
+import { Autoplay, Pagination, Navigation } from "swiper";
 
 
 
@@ -37,11 +37,15 @@ const Reviews = () => {
                 slidesPerGroup={3}
                 loop={true}
                 loopFillGroupWithBlank={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
                 pagination={{
                     clickable: true,
                 }}
-              
-                modules={[Pagination, Navigation]}
+
+                modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
 
