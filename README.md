@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Getting Started with Sabit Photography
 
-This website Developed by React [Sabit Photography](https://github.com/facebook/create-react-app).
+This website Developed by React [Sabit Photography](https://sabit-photography.web.app/).
 
 # Description about Website
 * Sabit Photography is  a Personal Photography Website.
