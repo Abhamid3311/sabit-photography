@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Arima:wght@300;500&display=swap');
 
 #banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(../../images/bgg.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(../../../images/bgg.jpg);
     height: 100vh;
     background-position: center;
     background-size: cover;

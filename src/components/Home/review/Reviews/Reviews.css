@@ -1,0 +1,55 @@
+#review {
+    background-position: center;
+    background-size: cover;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='800' preserveAspectRatio='none' viewBox='0 0 1440 800'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1030%26quot%3b)' fill='none'%3e%3crect width='1440' height='800' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M58 800L858 0L1077 0L277 800z' fill='url(%23SvgjsLinearGradient1031)'%3e%3c/path%3e%3cpath d='M549.2 800L1349.2 0L1613.2 0L813.2 800z' fill='url(%23SvgjsLinearGradient1031)'%3e%3c/path%3e%3cpath d='M1368 800L568 0L316 0L1116 800z' fill='url(%23SvgjsLinearGradient1032)'%3e%3c/path%3e%3cpath d='M955.8 800L155.79999999999995 0L-493.70000000000005 0L306.29999999999995 800z' fill='url(%23SvgjsLinearGradient1032)'%3e%3c/path%3e%3cpath d='M810.964937839078 800L1440 170.96493783907795L1440 800z' fill='url(%23SvgjsLinearGradient1031)'%3e%3c/path%3e%3cpath d='M0 800L629.035062160922 800L 0 170.96493783907795z' fill='url(%23SvgjsLinearGradient1032)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1030'%3e%3crect width='1440' height='800' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='0%25' y1='100%25' x2='100%25' y2='0%25' id='SvgjsLinearGradient1031'%3e%3cstop stop-color='rgba(15%2c 70%2c 185%2c 0.2)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(15%2c 70%2c 185%2c 0.2)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='100%25' y1='100%25' x2='0%25' y2='0%25' id='SvgjsLinearGradient1032'%3e%3cstop stop-color='rgba(15%2c 70%2c 185%2c 0.2)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(15%2c 70%2c 185%2c 0.2)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+    padding: 100px 0;
+    margin-top: 70px;
+    
+}
+
+.review-text {
+    font-size: 16px;
+    text-align: left;
+}
+.review-card {
+    transition: 0.5 ease;
+    border-radius: 20px;
+}
+.review-card:hover {
+    border: 1px solid red;
+}
+
+
+/* Swipper */
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

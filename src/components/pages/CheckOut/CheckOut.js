@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
-import auth from '../../firebase.init';
+import auth from '../../../firebase.init';
 
 const CheckOut = () => {
     const [user] = useAuthState(auth);

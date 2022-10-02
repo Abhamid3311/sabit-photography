@@ -10,14 +10,14 @@ const Service = ({ service }) => {
         navigate("/checkout");
     }
     return (
-        <Card >
+        <Card className='service-card'>
             <Card.Img variant="top" src={img} />
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
                 <Card.Text>
                     {description}
                 </Card.Text>
-                <Button onClick={handleBookNow} variant="primary">
+                <Button onClick={handleBookNow} variant="outline-primary">
                     Book Now <AiOutlineArrowRight></AiOutlineArrowRight>
                 </Button>
             </Card.Body>

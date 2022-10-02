@@ -1,10 +1,8 @@
 import React from 'react';
-import Banner from '../Banner/Banner';
-
-import Reviews from '../Reviews/Reviews';
-import Services from '../Services/Services';
+import Banner from './Banner/Banner';
 import Contact from './Contact';
-import Featured from './Featured/Featured';
+import Reviews from './review/Reviews/Reviews';
+import Services from './service/Services/Services';
 
 
 const Home = () => {
@@ -12,7 +10,6 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Services></Services>
-            {/*  <Featured></Featured> */}
             <Reviews></Reviews>
             <Contact></Contact>
 

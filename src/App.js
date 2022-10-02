@@ -2,21 +2,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import Blog from './components/Blog/Blog';
-import CheckOut from './components/CheckOut/CheckOut';
+import Blog from './components/pages/Blog/Blog';
+import CheckOut from './components/pages/CheckOut/CheckOut';
 import Login from './components/Login/Login';
-import NotFound from './components/NotFound/NotFound';
-import About from './components/About/About';
-import Banner from './components/Banner/Banner';
-import Services from './components/Services/Services';
-import Reviews from './components/Reviews/Reviews';
-import Register from './components/Register/Register';
-import RequireAuth from './components/RequireAuth/RequireAuth';
+import About from './components/pages/About/About';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './firebase.init';
-import Gallery from './components/Gallery/Gallery';
+import Gallery from './components/pages/Gallery/Gallery';
+import Register from './components/Login/Register';
+import Header from './components/SharedPage/Header/Header';
+import NotFound from './components/SharedPage/NotFound/NotFound';
+import Footer from './components/SharedPage/Footer/Footer';
+import RequireAuth from './components/SharedPage/RequireAuth/RequireAuth';
 
 
 function App() {

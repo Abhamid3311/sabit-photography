@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
-import sabit3 from '../../images/sabit1.png';
-import sabit2 from '../../images/sabit vai.jpg';
+import sabit3 from '../../../images/sabit1.png';
+import sabit2 from '../../../images/sabit vai.jpg';
 import { AiFillHome, AiTwotoneMail, AiFillPhone } from 'react-icons/ai';
 
 const About = () => {
@@ -37,7 +37,7 @@ const About = () => {
                 </p>
             </div>
 
-            <div class=" container col-xxl-8 px-4 py-5">
+           {/*  <div class=" container col-xxl-8 px-4 py-5">
                 <div class="row flex-lg-row align-items-center g-5 py-5">
                     <div class="col-10 col-sm-8 col-lg-6">
                         <img src={sabit3} class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="500" height="500" loading="lazy" />
@@ -51,16 +51,17 @@ const About = () => {
 
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
 
-            <div className='ms-5 container'>
+           {/*  <div className='ms-5 container'>
                 <h3 className='text-primary'>Contact Me  </h3>
                 <p className='fs-4'><AiFillHome></AiFillHome> Sonadanga, Khulna, Bangladesh</p>
                 <p className='fs-4'><AiTwotoneMail></AiTwotoneMail> sabitXXX@gmail.com</p>
                 <p className='fs-4'><AiFillPhone></AiFillPhone> +880 018XXXXXXXXX</p>
-            </div>
+            </div> */}
+
         </div>
     );
 };
