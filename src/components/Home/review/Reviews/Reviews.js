@@ -53,11 +53,12 @@ const Reviews = () => {
                         slidesPerView: 3,
                         spaceBetween: 20,
                     },
-                   
+
                 }}
 
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
+                data-aos="zoom-in"
             >
 
                 {

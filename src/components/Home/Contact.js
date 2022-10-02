@@ -36,10 +36,10 @@ const Contact = () => {
 
             <div class="container px-4 py-5">
                 <div class="row flex-lg-row align-items-center g-5 py-5">
-                    <div class="col-12 col-md-12 col-lg-6">
+                    <div class="col-12 col-md-12 col-lg-6" data-aos="fade-right">
                         <img src={photo1} class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy" />
                     </div>
-                    <div class="col-12 col-md-12 col-lg-6">
+                    <div class="col-12 col-md-12 col-lg-6" data-aos="fade-left">
                         <form ref={form} className='shadow-lg p-5 rounded-3' onSubmit={handleForm}>
                             <div class="mb-3 ">
                                 <label for="exampleFormControlInput1" class="form-label">Your name</label>

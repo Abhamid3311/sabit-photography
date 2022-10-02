@@ -5,8 +5,6 @@ import Home from './components/Home/Home';
 import CheckOut from './components/pages/CheckOut/CheckOut';
 import Login from './components/Login/Login';
 import About from './components/pages/About/About';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from './firebase.init';
 import Gallery from './components/pages/Gallery/Gallery';
 import Register from './components/Login/Register';
 import Header from './components/SharedPage/Header/Header';
@@ -15,9 +13,16 @@ import Footer from './components/SharedPage/Footer/Footer';
 import RequireAuth from './components/SharedPage/RequireAuth/RequireAuth';
 import { ToastContainer } from 'react-toastify';
 import Checkouts from './components/pages/CheckOut/Checkouts';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
 
 
 function App() {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
 
   return (
     <div>

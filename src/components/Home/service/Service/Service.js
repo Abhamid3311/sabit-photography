@@ -10,7 +10,7 @@ const Service = ({ service }) => {
         navigate("/checkout");
     }
     return (
-        <Card className='service-card'>
+        <Card className='service-card' data-aos="zoom-in-up">
             <Card.Img variant="top" src={img} />
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
