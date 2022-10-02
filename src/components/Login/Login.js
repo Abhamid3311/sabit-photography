@@ -5,7 +5,7 @@ import auth from '../../firebase.init';
 import './Login.css';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -38,55 +38,72 @@ const Login = () => {
         navigate(from, { replace: true });
     }
 
-    // Handle SignIn 
+    if (loading) {
+        return <p>Loading...</p>
+    }
 
+
+
+    // Handle Form SignIn 
     const handleUserSignIn = e => {
         e.preventDefault();
         signInWithEmailAndPassword(email, password);
-    }
+    };
 
+    //Google SignIn
     const handleGoogleSignIn = e => {
         e.preventDefault();
         signInWithGoogle(email, password)
-    }
+    };
 
     return (
-        <div className='form-container form-container mt-3'>
-            <div>
-                <h2 className='form-titel text-center my-5 text-primary fw-bold'>Login</h2>
+        <div className='mx-auto w-50 w-md-75  rounded  my-5 shadow-lg border-0'>
+            <div className='px-5 py-5'>
+                <h2 className='text-center my-3 text-primary fw-bold'>Login</h2>
 
                 <form onSubmit={handleUserSignIn}>
-                    <div className="input-group">
-                        <label htmlFor="email">Email</label>
-                        <input onBlur={handleEmailBlur} type="email" name="email" required />
-                    </div>
-                    <div className="input-group">
-                        <label htmlFor="password">Password</label>
-                        <input onBlur={handlePasswordBlur} type="password" name="password" required />
+                    <div class="form-floating mb-3">
+                        <input
+                            onBlur={handleEmailBlur}
+                            type="email"
+                            class="form-control"
+                            id="floatingInput"
+                            placeholder="name@example.com" required />
+                        <label for="floatingInput">Email address</label>
                     </div>
 
+                    <div class="form-floating">
+                        <input
+                            onBlur={handlePasswordBlur}
+                            type="password"
+                            class="form-control"
+                            id="floatingPassword"
+                            placeholder="Password" required />
+                        <label for="floatingPassword">Password</label>
+                    </div>
                     <p style={{ color: "red" }}>{error?.message}</p>
-                    {
-                        loading && <p>Loading...</p>
-                    }
 
-                    <input className='form-submit' type="submit" value="Login" />
+                    <button type="submit" className='w-100 btn btn-lg btn-primary'>Login</button>
                 </form>
 
 
-                <p className='create-account-p'>
-                    New to Sabit Photography? <Link className='form-link' to='/register'>create an account</Link>
+
+
+                <p className='w-full mt-2'>
+                    New to Sabit Photography? <Link className='text-warning' to='/register'>create an account</Link>
                 </p>
 
-                <p className='forget-pass-p'>
-                    Forget your password? <button onClick={async () => {
+                <p className='w-full mt-2'>
+                    Forget your password? <button className='btn btn-light text-danger' onClick={async () => {
                         await sendPasswordResetEmail(email);
                         toast('Check email for reset password');
-                    }} className='reset'>Reset password</button>
+                    }}>Reset password</button>
                 </p>
 
-                <ToastContainer />
-                <button onClick={handleGoogleSignIn} className='google-signIn-btn'>Continue with Google</button>
+                <button
+                    onClick={handleGoogleSignIn}
+                    className='w-100 btn btn-lg btn-warning'>Continue with Google
+                </button>
             </div>
 
         </div>

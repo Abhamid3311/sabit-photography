@@ -37,7 +37,7 @@ const CheckOut = () => {
     };
 
     return (
-        <div className='form-container mt-3'>
+        <div className='form-container my-5 shadow-lg border-0'>
             <div>
                 <h2 className='form-titel  text-center my-5 text-primary fw-bold'>Client Information</h2>
 

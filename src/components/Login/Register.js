@@ -57,31 +57,57 @@ const Register = () => {
 
 
     return (
-        <div className='form-container mt-5'>
-            <div>
-                <h2 className='form-titel text-center my-5 text-primary fw-bold'>Sign Up</h2>
-                <form onSubmit={handleCreateUsers}>
-                    <div className="input-group">
-                        <label htmlFor="email">Email</label>
-                        <input onBlur={handleEmailBlur} type="email" name="email" id="" required />
-                    </div>
-                    <div className="input-group">
-                        <label htmlFor="password">Password</label>
-                        <input onBlur={handlePasswordBlur} type="password" name="password" id="" required />
-                    </div>
-                    <div className="input-group">
-                        <label htmlFor="confirm-password">Confirm Password</label>
-                        <input onBlur={handleConfirmPasswordBlur} type="password" name="confirm-password" id="" required />
-                    </div>
-                    <p style={{ color: "red" }}>{error}</p>
-                    <input
+        <div className='mx-auto w-50 w-md-75  rounded  my-5 shadow-lg border-0'>
+            <div className='px-5 py-5'>
+                <h2 className='text-center my-3 text-primary fw-bold'>Sign Up</h2>
 
-                        className='form-submit' type="submit" value="Sign Up" />
+                <form onSubmit={handleCreateUsers}>
+                    <div class="form-floating mb-3">
+                        <input
+                            onBlur={handleEmailBlur}
+                            type="email"
+                            class="form-control"
+                            id="floatingInput"
+                            placeholder="name@example.com" required />
+                        <label for="floatingInput">Email address</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <input
+                            onBlur={handlePasswordBlur}
+                            type="password"
+                            class="form-control"
+                            id="Password"
+                            placeholder="Password" required />
+                        <label for="Password">Password</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <input
+                            onBlur={handleConfirmPasswordBlur}
+                            type="password"
+                            class="form-control"
+                            id="cPassword"
+                            placeholder="confirm Password" required />
+                        <label for="cPassword">Confirm Password</label>
+                    </div>
+
+                    <p style={{ color: "red" }}>{error?.message}</p>
+
+                    <button type="submit" className='w-100 btn btn-lg btn-primary'>Sign Up</button>
                 </form>
-                <p className='forget-pass-p'>
+
+
+
+
+                <p className='w-full mt-2'>
                     Already have an account? <Link className='form-link' to='/login'>Login</Link>
                 </p>
-                <button onClick={handleGoogleSignIn} className='google-signIn-btn'>Continue with Google</button>
+
+                <button
+                    onClick={handleGoogleSignIn}
+                    className='w-100 btn btn-lg btn-warning'>Continue with Google
+                </button>
             </div>
 
         </div>
