@@ -14,6 +14,7 @@ import NotFound from './components/SharedPage/NotFound/NotFound';
 import Footer from './components/SharedPage/Footer/Footer';
 import RequireAuth from './components/SharedPage/RequireAuth/RequireAuth';
 import { ToastContainer } from 'react-toastify';
+import Checkouts from './components/pages/CheckOut/Checkouts';
 
 
 function App() {
@@ -28,9 +29,10 @@ function App() {
         <Route path='/gallery' element={<Gallery></Gallery>} ></Route>
         <Route path='/checkout' element={
           <RequireAuth>
-            <CheckOut></CheckOut>
+            <Checkouts></Checkouts>
           </RequireAuth>} >
         </Route>
+        {/* <Route path='/order' element={<Checkouts></Checkouts>} ></Route> */}
         <Route path='/login' element={<Login></Login>} ></Route>
         <Route path='/register' element={<Register></Register>} ></Route>
         <Route path='*' element={<NotFound></NotFound>} ></Route>
